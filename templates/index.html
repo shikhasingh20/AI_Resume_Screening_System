@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+
+    <h1 class="display-4 fw-bold">
+        AI Resume Screening System
+    </h1>
+
+    <p class="lead mt-3">
+        Smart ATS-based Resume Screening and Candidate Ranking Platform
+    </p>
+
+    <hr>
+
+    <div class="mt-5">
+
+        <h3>Features</h3>
+
+        <div class="row mt-4">
+
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5>Resume Parsing</h5>
+                        <p>
+                            Extract skills, education, and experience automatically.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5>ATS Scoring</h5>
+                        <p>
+                            Match resumes against job descriptions using AI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5>Candidate Ranking</h5>
+                        <p>
+                            Rank candidates based on similarity scores.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-5">
+
+            <a href="/register" class="btn btn-success btn-lg">
+                Get Started
+            </a>
+
+            <a href="/login" class="btn btn-primary btn-lg">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

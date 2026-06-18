@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Applicants{% endblock %}
+
+{% block content %}
+
+<h2>Applicants List</h2>
+<input
+    type="text"
+    id="searchInput"
+    class="form-control mb-3"
+    placeholder="Search Applicant"
+    onkeyup="searchApplicants()"
+>
+
+<table
+    class="table"
+    id="applicantTable"
+>
+
+    <thead>
+
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>ATS Score</th>
+            <th>Status</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td>Shikha Singh</td>
+            <td>abc@gmail.com</td>
+            <td>88%</td>
+            <td>Shortlisted</td>
+        </tr>
+
+    </tbody>
+  
+
+</table>
+
+{% endblock %}
