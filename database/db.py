@@ -1,4 +1,5 @@
 import pymysql
+from pymysql.cursors import DictCursor
 
 from config import (
     MYSQL_HOST,
@@ -8,20 +9,95 @@ from config import (
 )
 
 
-def get_connection():
+class Database:
 
-    connection = pymysql.connect(
+    def __init__(self):
 
-        host=MYSQL_HOST,
+        self.connection = None
 
-        user=MYSQL_USER,
+    # -------------------------
+    # Connect Database
+    # -------------------------
 
-        password=MYSQL_PASSWORD,
+    def connect(self):
 
-        database=MYSQL_DB,
+        if self.connection is None:
 
-        cursorclass=pymysql.cursors.DictCursor
+            self.connection = pymysql.connect(
 
-    )
+                host=MYSQL_HOST,
 
-    return connection
+                user=MYSQL_USER,
+
+                password=MYSQL_PASSWORD,
+
+                database=MYSQL_DB,
+
+                cursorclass=DictCursor,
+
+                autocommit=True
+
+            )
+
+        return self.connection
+
+    # -------------------------
+    # Execute SELECT Query
+    # -------------------------
+
+    def fetch(self, query, values=None):
+
+        connection = self.connect()
+
+        with connection.cursor() as cursor:
+
+            cursor.execute(query, values)
+
+            return cursor.fetchall()
+
+    # -------------------------
+    # Execute SELECT ONE
+    # -------------------------
+
+    def fetch_one(self, query, values=None):
+
+        connection = self.connect()
+
+        with connection.cursor() as cursor:
+
+            cursor.execute(query, values)
+
+            return cursor.fetchone()
+
+    # -------------------------
+    # INSERT
+    # UPDATE
+    # DELETE
+    # -------------------------
+
+    def execute(self, query, values=None):
+
+        connection = self.connect()
+
+        with connection.cursor() as cursor:
+
+            cursor.execute(query, values)
+
+            connection.commit()
+
+            return cursor.lastrowid
+
+    # -------------------------
+    # Close Connection
+    # -------------------------
+
+    def close(self):
+
+        if self.connection:
+
+            self.connection.close()
+
+            self.connection = None
+
+
+db = Database()

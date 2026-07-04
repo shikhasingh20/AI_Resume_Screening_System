@@ -1,29 +1,34 @@
+"""
+Similarity Engine
+"""
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-def calculate_similarity(
-        resume_text,
-        job_description
-):
+class SimilarityEngine:
 
-    documents = [
-        resume_text,
-        job_description
-    ]
+    @staticmethod
+    def calculate(resume_text, job_text):
 
-    vectorizer = TfidfVectorizer()
+        corpus = [
 
-    tfidf_matrix = vectorizer.fit_transform(
-        documents
-    )
+            resume_text,
 
-    similarity_score = cosine_similarity(
-        tfidf_matrix[0:1],
-        tfidf_matrix[1:2]
-    )
+            job_text
 
-    return round(
-        similarity_score[0][0],
-        2
-    )
+        ]
+
+        vectorizer = TfidfVectorizer()
+
+        vectors = vectorizer.fit_transform(corpus)
+
+        similarity = cosine_similarity(
+
+            vectors[0:1],
+
+            vectors[1:2]
+
+        )[0][0]
+
+        return round(similarity * 100, 2)

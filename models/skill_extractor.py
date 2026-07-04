@@ -1,36 +1,80 @@
-SKILLS_DB = [
+"""
+Extract technical skills from resume text.
+"""
 
-    "python",
-    "java",
-    "c++",
-    "mysql",
-    "postgresql",
-    "html",
-    "css",
-    "javascript",
-    "react",
-    "nodejs",
-    "flask",
-    "django",
-    "git",
-    "github",
-    "machine learning",
-    "deep learning",
-    "data analysis",
-    "excel"
-]
+import re
 
 
-def extract_skills(text):
+class SkillExtractor:
 
-    text = text.lower()
+    def __init__(self):
 
-    found_skills = []
+        self.skills = {
 
-    for skill in SKILLS_DB:
+            "Programming": [
+                "python", "java", "c", "c++", "c#", "javascript",
+                "typescript", "php", "go", "rust"
+            ],
 
-        if skill in text:
+            "Web": [
+                "html", "css", "bootstrap",
+                "flask", "django", "react",
+                "angular", "vue", "nodejs",
+                "express"
+            ],
 
-            found_skills.append(skill)
+            "Database": [
+                "mysql",
+                "postgresql",
+                "mongodb",
+                "oracle",
+                "sqlite"
+            ],
 
-    return list(set(found_skills))
+            "Cloud": [
+                "aws",
+                "azure",
+                "gcp",
+                "docker",
+                "kubernetes"
+            ],
+
+            "AI": [
+                "machine learning",
+                "deep learning",
+                "tensorflow",
+                "keras",
+                "pytorch",
+                "nlp",
+                "opencv",
+                "pandas",
+                "numpy",
+                "scikit-learn"
+            ],
+
+            "Tools": [
+                "git",
+                "github",
+                "jira",
+                "linux",
+                "postman"
+            ]
+        }
+
+    def extract(self, text):
+
+        found = []
+
+        text = text.lower()
+
+        for category in self.skills.values():
+
+            for skill in category:
+
+                pattern = r"\b" + re.escape(skill) + r"\b"
+
+                if re.search(pattern, text):
+
+                    found.append(skill)
+
+        return sorted(list(set(found)))
