@@ -1,0 +1,28 @@
+{
+    "software": [
+        "Software Engineer",
+        "Software Developer",
+        "Backend Developer",
+        "Frontend Developer",
+        "Full Stack Developer"
+    ],
+
+    "data": [
+        "Data Analyst",
+        "Data Scientist",
+        "Machine Learning Engineer",
+        "AI Engineer",
+        "Business Analyst"
+    ],
+
+    "cloud": [
+        "Cloud Engineer",
+        "DevOps Engineer",
+        "Site Reliability Engineer"
+    ],
+
+    "security": [
+        "Cyber Security Engineer",
+        "Security Analyst"
+    ]
+}

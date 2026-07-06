@@ -1,0 +1,27 @@
+{
+    "cloud": [
+        "AWS Certified",
+        "Azure Fundamentals",
+        "Google Cloud",
+        "Oracle Cloud"
+    ],
+
+    "programming": [
+        "Oracle Java",
+        "Python Institute",
+        "Microsoft Certified"
+    ],
+
+    "data_science": [
+        "TensorFlow Developer",
+        "IBM Data Science",
+        "Google Data Analytics"
+    ],
+
+    "online_platforms": [
+        "Coursera",
+        "Udemy",
+        "edX",
+        "NPTEL"
+    ]
+}

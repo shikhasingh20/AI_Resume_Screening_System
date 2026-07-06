@@ -1,0 +1,31 @@
+{
+    "undergraduate": [
+        "B.Tech",
+        "BE",
+        "BCA",
+        "B.Sc",
+        "B.Com",
+        "BA",
+        "BBA"
+    ],
+
+    "postgraduate": [
+        "M.Tech",
+        "ME",
+        "MCA",
+        "M.Sc",
+        "MBA",
+        "MA",
+        "M.Com"
+    ],
+
+    "doctorate": [
+        "PhD",
+        "Doctor of Philosophy"
+    ],
+
+    "diploma": [
+        "Diploma",
+        "Polytechnic"
+    ]
+}

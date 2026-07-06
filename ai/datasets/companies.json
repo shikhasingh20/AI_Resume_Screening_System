@@ -1,0 +1,32 @@
+{
+    "service_companies": [
+        "TCS",
+        "Infosys",
+        "Wipro",
+        "Accenture",
+        "Capgemini",
+        "Cognizant",
+        "IBM",
+        "Deloitte"
+    ],
+
+    "product_companies": [
+        "Google",
+        "Microsoft",
+        "Amazon",
+        "Meta",
+        "Oracle",
+        "Adobe",
+        "SAP",
+        "Apple",
+        "Netflix"
+    ],
+
+    "startups": [
+        "Swiggy",
+        "Zomato",
+        "Razorpay",
+        "PhonePe",
+        "Flipkart"
+    ]
+}
